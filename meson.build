@@ -9,5 +9,5 @@ install_headers('juliahsl.h')
 
 # Library libhsl
 libhsl = library('hsl',
-                 sources : 'juliahsl_versions.c',
+                 sources : 'juliahsl.c',
                  install : true)
