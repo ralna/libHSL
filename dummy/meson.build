@@ -1,13 +1,13 @@
 project(
-  'JuliaHSL',
+  'libHSL',
   'c',
-  version: '1.0.0',
+  version: '2.0.0',
 )
 
 # Header 
-install_headers('juliahsl.h')
+install_headers('libhsl.h')
 
 # Library libhsl
 libhsl = library('hsl',
-                 sources : 'juliahsl.c',
+                 sources : 'libhsl.c',
                  install : true)

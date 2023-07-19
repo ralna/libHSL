@@ -1,4 +1,4 @@
-# JuliaHSL
+# libHSL
 
 This is a dummy repository for the Julia HSL interface. 
 
