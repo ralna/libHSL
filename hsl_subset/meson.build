@@ -40,7 +40,7 @@ libhsl_subset_src = []
 libhsl_subset_multi_src = []
 libhsl_subset_f_src = []
 libhsl_subset_f_multi_src = []
-# hsl_subset_headers = []
+hsl_subset_headers = []
 hsl_subset_include = include_directories('include')
 
 libhsl_subset_src += files('hsl_ad02/hsl_ad02r.f90',
@@ -117,6 +117,18 @@ libhsl_subset_f_src += files('fa14/fa14r.f',
 
 libhsl_subset_f_multi_src += files('kb07/kb07i.f')
 
+hsl_subset_headers += files('include/hsl_ma48.h',
+                            'include/hsl_ma57.h',
+                            'include/hsl_ma77.h',
+                            'include/hsl_ma86.h',
+                            'include/hsl_ma87.h',
+                            'include/hsl_ma97.h',
+                            'include/hsl_mc64.h',
+                            'include/hsl_mc68.h',
+                            'include/hsl_mi20.h',
+                            'include/hsl_mi28.h',
+                            'include/hsl_precision.h')
+
 gen_single = generator(fc_compiler,
                        output : 'single_int32_@BASENAME@.f90',
                        arguments : pp_options + '-DREAL_32' +
@@ -192,7 +204,7 @@ libhsl_subset = library('hsl_subset_64',
                         install : true)
 
 # Headers
-# install_headers(hsl_subset_headers)
+install_headers(hsl_subset_headers)
 
 # Fortran modules
 script_modules = files('install_modules.py')
