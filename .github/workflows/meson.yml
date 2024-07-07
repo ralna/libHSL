@@ -63,7 +63,7 @@ jobs:
           cd $GITHUB_WORKSPACE/libhsl
           meson compile -C builddir_libhsl
           cd $GITHUB_WORKSPACE/hsl_subset
-          meson compile builddir_hsl_subset
+          meson compile -C builddir_hsl_subset
 
       - uses: actions/upload-artifact@v4
         if: failure()
@@ -77,7 +77,7 @@ jobs:
           cd $GITHUB_WORKSPACE/libhsl
           meson install -C builddir_libhsl
           cd $GITHUB_WORKSPACE/hsl_subset
-          meson install builddir_hsl_subset
+          meson install -C builddir_hsl_subset
 
       - uses: actions/upload-artifact@v4
         if: failure()
