@@ -9,11 +9,7 @@ module hsl_ma77_real
    use hsl_kinds_real, only: ip_, long_, lp_, rp_
    use hsl_of01_real, of01_rdata => of01_data
    use hsl_of01_integer, of01_idata => of01_data
-#ifdef INTEGER_64
-   USE GALAHAD_SYMBOLS_64, ONLY: GALAHAD_unavailable_option
-#else
-   USE GALAHAD_SYMBOLS, ONLY: GALAHAD_unavailable_option
-#endif
+   USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
 
   implicit none
 

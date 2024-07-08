@@ -7,12 +7,8 @@
 module hsl_ma57_real
    use hsl_zd11_real
    use hsl_kinds_real, only: ip_, rp_
+   USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
 
-#ifdef INTEGER_64
-     USE GALAHAD_SYMBOLS_64, ONLY: GALAHAD_unavailable_option
-#else
-     USE GALAHAD_SYMBOLS, ONLY: GALAHAD_unavailable_option
-#endif
    implicit none
    private :: ip_, rp_
 

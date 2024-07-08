@@ -7,11 +7,7 @@
    module hsl_mi20_real
 
      use hsl_kinds_real, only: ip_, lp_, rp_
-#ifdef INTEGER_64
-     USE GALAHAD_SYMBOLS_64, ONLY: GALAHAD_unavailable_option
-#else
-     USE GALAHAD_SYMBOLS, ONLY: GALAHAD_unavailable_option
-#endif
+     USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
      use hsl_zd11_real
      use hsl_mc65_real
      use hsl_ma48_real

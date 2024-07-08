@@ -6,15 +6,11 @@
 
   module hsl_mi35_real
     use hsl_kinds_real, only: ip_, long_, lp_, rp_
-#ifdef INTEGER_64
-     USE GALAHAD_SYMBOLS_64, ONLY: GALAHAD_unavailable_option
-#else
-     USE GALAHAD_SYMBOLS, ONLY: GALAHAD_unavailable_option
-#endif
+    USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
 
     implicit none
-
     private
+
     public :: mi35_keep, mi35_control, mi35_info
     public :: mi35_factorize, mi35_finalise, mi35_precondition, mi35_solve
     public :: mi35_check_matrix, mi35_factorizeC, mi35_formC

@@ -8,11 +8,7 @@ MODULE hsl_mc64_real
 
    use hsl_kinds_real, only: ip_, rp_
    use hsl_zd11_real
-#ifdef INTEGER_64
-   USE GALAHAD_SYMBOLS_64, ONLY: GALAHAD_unavailable_option
-#else
-   USE GALAHAD_SYMBOLS, ONLY: GALAHAD_unavailable_option
-#endif
+   USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
 
    IMPLICIT NONE
 

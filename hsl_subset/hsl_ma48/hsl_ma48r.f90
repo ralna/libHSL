@@ -7,14 +7,11 @@
 module hsl_ma48_real
    use hsl_kinds_real, only: ip_, long_, lp_, rp_
    use hsl_zd11_real
-#ifdef INTEGER_64
-     USE GALAHAD_SYMBOLS_64, ONLY: GALAHAD_unavailable_option
-#else
-     USE GALAHAD_SYMBOLS, ONLY: GALAHAD_unavailable_option
-#endif
-   implicit none
+   USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
 
+   implicit none
    private
+
    public :: ma48_factors,ma48_control,ma48_ainfo,ma48_finfo,ma48_sinfo,       &
              ma48_initialize,ma48_analyse,ma48_factorize,ma48_solve,           &
              ma48_finalize, ma48_get_perm,ma48_special_rows_and_cols,          &

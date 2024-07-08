@@ -6,15 +6,11 @@
 
  module hsl_mi28_real
    use hsl_kinds_real, only: ip_, long_, lp_, rp_
-#ifdef INTEGER_64
-     USE GALAHAD_SYMBOLS_64, ONLY: GALAHAD_unavailable_option
-#else
-     USE GALAHAD_SYMBOLS, ONLY: GALAHAD_unavailable_option
-#endif
+   USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
 
    implicit none
-
    private
+
    public :: mi28_keep, mi28_control, mi28_info
    public :: mi28_factorize, mi28_finalise, mi28_precondition, mi28_solve
 
