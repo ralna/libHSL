@@ -1,4 +1,4 @@
-! THIS VERSION: GALAHAD 4.1 - 2023-02-01 AT 11:10 GMT.
+! THIS VERSION: GALAHAD 5.0 - 2024-07-09 AT 08:10 GMT.
 
 #include "hsl_subset.h"
 
