@@ -7,7 +7,7 @@
 module hsl_ma48_real
    use hsl_kinds_real, only: ip_, long_, lp_, rp_
    use hsl_zd11_real
-   USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
+   USE HSL_SYMBOLS, ONLY: HSL_unavailable_option
 
    implicit none
    private
@@ -92,7 +92,7 @@ module hsl_ma48_real
 
    type ma48_ainfo
       real(rp_) :: ops = 0.0   ! Number of operations in elimination
-      integer(ip_) :: flag =  GALAHAD_unavailable_option ! Flags success/failure
+      integer(ip_) :: flag =  HSL_unavailable_option ! Flags success/failure
       integer(ip_) :: more = 0   ! More information on failure
       integer(long_) :: lena_analyse  = 0! Size for analysis (main arrays)
       integer(long_) :: lenj_analyse  = 0! Size for analysis (integer aux array)
@@ -113,7 +113,7 @@ module hsl_ma48_real
 
    type ma48_finfo
       real(rp_) :: ops  = 0.0  ! Number of operations in elimination
-      integer(ip_) :: flag =  GALAHAD_unavailable_option ! Flags success/failure
+      integer(ip_) :: flag =  HSL_unavailable_option ! Flags success/failure
       integer(ip_) :: more   = 0  ! More information on failure
       integer(long_) :: size_factor   = 0! Number of words to hold factors
 !! For the moment leni_factorize = lena_factorize because of BTF structure
@@ -125,7 +125,7 @@ module hsl_ma48_real
    end type ma48_finfo
 
    type ma48_sinfo
-      integer(ip_) :: flag = GALAHAD_unavailable_option  ! Flags success/failure
+      integer(ip_) :: flag = HSL_unavailable_option  ! Flags success/failure
       integer(ip_) :: more = 0   ! More information on failure
       integer(ip_) :: stat = 0   ! STAT value after allocate failure
    end type ma48_sinfo
@@ -160,7 +160,7 @@ contains
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
 
-      ainfo%flag = GALAHAD_unavailable_option
+      ainfo%flag = HSL_unavailable_option
 
    end subroutine ma48_analyse_real
 
@@ -180,7 +180,7 @@ contains
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
 
-      finfo%flag = GALAHAD_unavailable_option
+      finfo%flag = HSL_unavailable_option
 
    end subroutine ma48_factorize_real
 
@@ -205,7 +205,7 @@ contains
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
 
-      sinfo%flag = GALAHAD_unavailable_option
+      sinfo%flag = HSL_unavailable_option
 
    end subroutine ma48_solve_real
 
@@ -213,7 +213,7 @@ contains
       type(ma48_factors), intent(inout) :: factors
       type(ma48_control), intent(in) :: control
       integer(ip_) :: info
-      info = GALAHAD_unavailable_option
+      info = HSL_unavailable_option
     end subroutine ma48_finalize_real
 
   subroutine ma48_special_rows_and_cols_real(factors,rank,rows,cols,         &

@@ -7,7 +7,7 @@
    module hsl_mi20_real
 
      use hsl_kinds_real, only: ip_, lp_, rp_
-     USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
+     USE HSL_SYMBOLS, ONLY: HSL_unavailable_option
      use hsl_zd11_real
      use hsl_mc65_real
      use hsl_ma48_real
@@ -99,7 +99,7 @@
      type(mi20_keep), intent(inout) :: keep
      type(mi20_control), intent(in) :: control
      type(mi20_info), intent(out) :: info
-     info%flag = GALAHAD_unavailable_option
+     info%flag = HSL_unavailable_option
      return
      end subroutine mi20_setup
 
@@ -109,7 +109,7 @@
      type(mi20_control), intent(in) ::control
      type(mi20_info), intent(inout) :: info
      type(ma48_control), optional, intent(inout) :: ma48_cntrl
-     info%flag = GALAHAD_unavailable_option
+     info%flag = HSL_unavailable_option
      return
      end subroutine mi20_finalize
 

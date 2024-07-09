@@ -7,7 +7,7 @@
 module hsl_ma57_real
    use hsl_zd11_real
    use hsl_kinds_real, only: ip_, rp_
-   USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
+   USE HSL_SYMBOLS, ONLY: HSL_unavailable_option
 
    implicit none
    private :: ip_, rp_
@@ -186,7 +186,7 @@ contains
      &     ' subroutine MA57_analyse with its HSL namesake ', /,               &
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-      ainfo%flag = GALAHAD_unavailable_option
+      ainfo%flag = HSL_unavailable_option
       ainfo%opsa = -1.0_rp_
       ainfo%opse = -1.0_rp_
       ainfo%more = 0
@@ -218,7 +218,7 @@ contains
      &     ' subroutine MA57_factorze with its HSL namesake ', /,              &
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-      finfo%flag = GALAHAD_unavailable_option
+      finfo%flag = HSL_unavailable_option
       finfo%opsa = -1.0_rp_
       finfo%opse = -1.0_rp_
       finfo%opsb = -1.0_rp_
@@ -264,7 +264,7 @@ contains
      &     ' subroutine MA57_solve with its HSL namesake ', /,                 &
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-      sinfo%flag = GALAHAD_unavailable_option
+      sinfo%flag = HSL_unavailable_option
       sinfo%stat = 0
       sinfo%cond = -1.0_rp_
       sinfo%cond2 = -1.0_rp_
@@ -290,7 +290,7 @@ contains
      &     ' subroutine MA57_solve with its HSL namesake ', /,                 &
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-      sinfo%flag = GALAHAD_unavailable_option
+      sinfo%flag = HSL_unavailable_option
       sinfo%stat = 0
       sinfo%cond = -1.0_rp_
       sinfo%cond2 = -1.0_rp_
@@ -314,14 +314,14 @@ contains
      &     ' subroutine MA57_fredholm_alternative with its HSL namesake ', /,  &
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-      sinfo%flag = GALAHAD_unavailable_option
+      sinfo%flag = HSL_unavailable_option
    end subroutine ma57_fredholm_alternative
 
    subroutine ma57_finalize(factors,control,info)
       type(ma57_factors), intent(inout) :: factors
       type(ma57_control), intent(in) :: control
       integer(ip_),  intent(out) :: info
-      info = GALAHAD_unavailable_option
+      info = HSL_unavailable_option
    end subroutine ma57_finalize
 
    subroutine ma57_enquire(factors,perm,pivots,d,perturbation,scaling)
@@ -336,7 +336,7 @@ contains
       type(ma57_factors), intent(inout) :: factors
       real(rp_), intent(in) :: d(2,factors%n)
       integer(ip_),  intent(out) :: info
-      info = GALAHAD_unavailable_option
+      info = HSL_unavailable_option
    end subroutine ma57_alter_d
 
    subroutine ma57_part_solve2(factors,control,part,x,info)
@@ -353,7 +353,7 @@ contains
      &     ' subroutine MA57_solve with its HSL namesake ', /,                 &
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-      info = GALAHAD_unavailable_option
+      info = HSL_unavailable_option
    end subroutine ma57_part_solve2
 
    subroutine ma57_part_solve1(factors,control,part,x,info)
@@ -370,7 +370,7 @@ contains
      &     ' subroutine MA57_solve with its HSL namesake ', /,                 &
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-      info = GALAHAD_unavailable_option
+      info = HSL_unavailable_option
    end subroutine ma57_part_solve1
 
    subroutine ma57_sparse_lsolve(factors,control,nzrhs,irhs,nzsoln,isoln,      &
@@ -390,7 +390,7 @@ contains
      &     ' subroutine MA57_sparse_lsolve with its HSL namesake ', /,         &
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-      sinfo%flag = GALAHAD_unavailable_option
+      sinfo%flag = HSL_unavailable_option
    end subroutine ma57_sparse_lsolve
 
    subroutine ma57_lmultiply(factors,control,trans,x,y,sinfo)
@@ -408,7 +408,7 @@ contains
      &     ' subroutine MA57_lmultiply with its HSL namesake ', /,             &
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-      sinfo%flag = GALAHAD_unavailable_option
+      sinfo%flag = HSL_unavailable_option
    end subroutine ma57_lmultiply
 
    subroutine ma57_get_factors(factors,control,nzl,iptrl,lrows,lvals,          &
@@ -430,7 +430,7 @@ contains
      &     ' subroutine MA57_get_factors with its HSL namesake ', /,           &
      &     ' and dependencies. See ', /,                                       &
      &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-      sinfo%flag = GALAHAD_unavailable_option
+      sinfo%flag = HSL_unavailable_option
    end subroutine ma57_get_factors
 
    pure integer(ip_) function ma57_get_n__(factors)

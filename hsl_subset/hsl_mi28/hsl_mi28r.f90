@@ -6,7 +6,7 @@
 
  module hsl_mi28_real
    use hsl_kinds_real, only: ip_, long_, lp_, rp_
-   USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
+   USE HSL_SYMBOLS, ONLY: HSL_unavailable_option
 
    implicit none
    private
@@ -105,7 +105,7 @@
    &     ' subroutine MI28_factorize with its HSL namesake ', /,               &
    &     ' and dependencies. See ', /,                                         &
    &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-    info%flag = GALAHAD_unavailable_option
+    info%flag = HSL_unavailable_option
   end subroutine mi28_factorize_real
 
   subroutine mi28_precondition_real(n, keep, z, y, info)
@@ -114,7 +114,7 @@
     real(rp_), intent(in) :: z(n)
     real(rp_), intent(out) :: y(n)
     type(mi28_info), intent(inout) :: info
-    info%flag = GALAHAD_unavailable_option
+    info%flag = HSL_unavailable_option
   end subroutine mi28_precondition_real
 
   subroutine mi28_solve_real(trans, n, keep, z, y, info)
@@ -124,14 +124,14 @@
     real(rp_), intent(in) :: z(n)
     real(rp_), intent(out) :: y(n)
     type(mi28_info), intent(inout) :: info
-    info%flag = GALAHAD_unavailable_option
+    info%flag = HSL_unavailable_option
 
   end subroutine mi28_solve_real
 
   subroutine mi28_finalise_real(keep, info)
     type(mi28_keep), intent(inout) :: keep
     type(mi28_info), intent(inout) :: info
-    info%flag = GALAHAD_unavailable_option
+    info%flag = HSL_unavailable_option
   end subroutine mi28_finalise_real
 
  end module hsl_mi28_real

@@ -9,7 +9,7 @@ module hsl_ma77_real
    use hsl_kinds_real, only: ip_, long_, lp_, rp_
    use hsl_of01_real, of01_rdata => of01_data
    use hsl_of01_integer, of01_idata => of01_data
-   USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
+   USE HSL_SYMBOLS, ONLY: HSL_unavailable_option
 
   implicit none
 
@@ -400,7 +400,7 @@ contains
    integer(ip_) :: flag
    type (of01_idata), intent(inout) :: data
    integer(ip_), intent(in) :: lp
-   flag = GALAHAD_unavailable_option
+   flag = HSL_unavailable_option
   end subroutine MA77_read_integer
 
 !************************************************************************
@@ -416,7 +416,7 @@ contains
    type (of01_rdata), intent(inout) :: data
    integer(ip_), intent(in) :: lp
    integer(ip_), optional, intent (in) :: map(length)
-   flag = GALAHAD_unavailable_option
+   flag = HSL_unavailable_option
   end subroutine MA77_read_real
 
   subroutine MA77_read_discard_real(rfile,keep_array,loc,length,read_array, &
@@ -430,7 +430,7 @@ contains
    type (of01_rdata), intent(inout) :: data
    integer(ip_), intent(in) :: lp
    integer(ip_), optional, intent (in) :: map(length)
-   flag = GALAHAD_unavailable_option
+   flag = HSL_unavailable_option
   end subroutine MA77_read_discard_real
 
   subroutine MA77_write_real(rfile,size_array,keep_array,loc,length, &
@@ -447,7 +447,7 @@ contains
    integer(long_), intent(in) :: maxstore
    integer(long_), intent(inout) :: used
    integer(long_), optional, intent(in) :: inactive
-   flag = GALAHAD_unavailable_option
+   flag = HSL_unavailable_option
   end subroutine MA77_write_real
 
   subroutine MA77_write_integer(ifile,size_array,keep_array,loc,length, &
@@ -463,7 +463,7 @@ contains
    integer(ip_), intent(in) :: lp
    integer(long_), intent(in) :: maxstore
    integer(long_), intent(inout) :: used
-   flag = GALAHAD_unavailable_option
+   flag = HSL_unavailable_option
   end subroutine MA77_write_integer
 
   subroutine MA77_finalise_real(keep,control,info,restart_file)
@@ -496,7 +496,7 @@ contains
   &     ' subroutine ', A, ' HSL namesake ', /,                                &
   &     ' and dependencies. See ', /,                                          &
   &     '   $GALAHAD/src/makedefs/packages for details.' )" ) name
-    info%flag = GALAHAD_unavailable_option
+    info%flag = HSL_unavailable_option
     info%detlog = 0.0
     info%detsign = 1
     info%iostat = 0

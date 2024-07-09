@@ -9,7 +9,7 @@ module hsl_ma87_real
    use hsl_mc78_integer
    use hsl_mc34_real
    use hsl_zd11_real
-   USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
+   USE HSL_SYMBOLS, ONLY: HSL_unavailable_option
 
    implicit none
    private :: ip_, long_, lp_, rp_
@@ -328,7 +328,7 @@ subroutine MA87_analyse_real(n, ptr, row, order, keep, control, info)
   &     ' and dependencies. See ', /,                                          &
   &     '   $GALAHAD/src/makedefs/packages for details.' )" )
 
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
    info%num_factor = 0_long
    info%num_flops = 0_long
    info%num_nodes = 0
@@ -356,7 +356,7 @@ subroutine MA87_factor_real(n, ptr, row, val, order, keep, control, info)
   &     ' and dependencies. See ', /,                                          &
   &     '   $GALAHAD/src/makedefs/packages for details.' )" )
 
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
    info%num_factor = 0_long
    info%num_flops = 0_long
    info%num_nodes = 0
@@ -391,7 +391,7 @@ subroutine MA87_factor_solve_one_real(n, ptr, row, val, order, keep, control,&
   &     ' and dependencies. See ', /,                                          &
   &     '   $GALAHAD/src/makedefs/packages for details.' )" )
 
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
    info%num_factor = 0_long
    info%num_flops = 0_long
    info%num_nodes = 0
@@ -428,7 +428,7 @@ subroutine MA87_factor_solve_mult_real(n, ptr, row, val, order, keep, &
   &     ' and dependencies. See ', /,                                          &
   &     '   $GALAHAD/src/makedefs/packages for details.' )" )
 
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
    info%num_factor = 0_long
    info%num_flops = 0_long
    info%num_nodes = 0
@@ -462,7 +462,7 @@ subroutine MA87_solve_one_real(x,order,keep,control,info,job)
   &     ' and dependencies. See ', /,                                          &
   &     '   $GALAHAD/src/makedefs/packages for details.' )" )
 
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
    info%num_factor = 0_long
    info%num_flops = 0_long
    info%num_nodes = 0
@@ -499,7 +499,7 @@ subroutine MA87_solve_mult_real(nrhs,lx,x,order,keep, control,info,job)
   &     ' and dependencies. See ', /,                                          &
   &     '   $GALAHAD/src/makedefs/packages for details.' )" )
 
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
    info%num_factor = 0_long
    info%num_flops = 0_long
    info%num_nodes = 0
@@ -536,7 +536,7 @@ subroutine MA87_sparse_fwd_solve_real(nbi,bindex,b,order,invp,               &
   &     ' and dependencies. See ', /,                                          &
   &     '   $GALAHAD/src/makedefs/packages for details.' )" )
 
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
    info%num_factor = 0_long
    info%num_flops = 0_long
    info%num_nodes = 0

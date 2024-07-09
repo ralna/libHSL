@@ -8,7 +8,7 @@
 
       use hsl_kinds, only: ip_, long_
       use hsl_zb01_integer
-      USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
+      USE HSL_SYMBOLS, ONLY: HSL_unavailable_option
 
       IMPLICIT NONE
       PRIVATE
@@ -62,7 +62,7 @@
   &     ' subroutine MC68_order HSL namesake  and dependencies. See ', /,      &
   &     '   $GALAHAD/src/makedefs/packages for details.' )" )
 
-        info%flag = GALAHAD_unavailable_option
+        info%flag = HSL_unavailable_option
         info%stat = 0
 
       END SUBROUTINE mc68_order_integer

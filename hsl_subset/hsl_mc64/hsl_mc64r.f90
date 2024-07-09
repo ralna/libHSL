@@ -8,7 +8,7 @@ MODULE hsl_mc64_real
 
    use hsl_kinds_real, only: ip_, rp_
    use hsl_zd11_real
-   USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
+   USE HSL_SYMBOLS, ONLY: HSL_unavailable_option
 
    IMPLICIT NONE
 
@@ -66,7 +66,7 @@ CONTAINS
   &     ' subroutine MC64_matching with its HSL namesake ', /,                 &
   &     ' and dependencies. See ', /,                                          &
   &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-       info%flag = GALAHAD_unavailable_option
+       info%flag = HSL_unavailable_option
    END SUBROUTINE mc64_matching_zd11_real
 
    SUBROUTINE mc64_matching_hslstd_real(job,matrix_type,m,n,ptr,row,         &

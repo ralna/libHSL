@@ -6,7 +6,7 @@
 
   module hsl_mi35_real
     use hsl_kinds_real, only: ip_, long_, lp_, rp_
-    USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
+    USE HSL_SYMBOLS, ONLY: HSL_unavailable_option
 
     implicit none
     private
@@ -95,7 +95,7 @@
    &     ' subroutine MI35_check_matrix with its HSL namesake ', /,            &
    &     ' and dependencies. See ', /,                                         &
    &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-    info%flag = GALAHAD_unavailable_option
+    info%flag = HSL_unavailable_option
     end subroutine mi35_check_matrix
 
 !****************************************************************************
@@ -123,7 +123,7 @@
    &     ' subroutine MI35_factorize with its HSL namesake ', /,               &
    &     ' and dependencies. See ', /,                                         &
    &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-    info%flag = GALAHAD_unavailable_option
+    info%flag = HSL_unavailable_option
     end subroutine mi35_factorize
 
 !****************************************************************************
@@ -149,7 +149,7 @@
    &     ' subroutine MI35_formC with its HSL namesake ', /,                   &
    &     ' and dependencies. See ', /,                                         &
    &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-    info%flag = GALAHAD_unavailable_option
+    info%flag = HSL_unavailable_option
     end subroutine mi35_formC
 
 !****************************************************************************
@@ -175,7 +175,7 @@
    &     ' subroutine MI35_factorizeC with its HSL namesake ', /,              &
    &     ' and dependencies. See ', /,                                         &
    &     '   $GALAHAD/src/makedefs/packages for details.' )" )
-    info%flag = GALAHAD_unavailable_option
+    info%flag = HSL_unavailable_option
     end subroutine mi35_factorizeC
 
 !****************************************************************************
@@ -186,7 +186,7 @@
     real(rp_), intent(in) :: z(n)
     real(rp_), intent(out) :: y(n)
     type(mi35_info), intent(inout) :: info
-    info%flag = GALAHAD_unavailable_option
+    info%flag = HSL_unavailable_option
     end subroutine mi35_precondition
 
 !****************************************************************************
@@ -198,7 +198,7 @@
     real(rp_), intent(in) :: z(n)
     real(rp_), intent(out) :: y(n)
     type(mi35_info), intent(inout) :: info
-    info%flag = GALAHAD_unavailable_option
+    info%flag = HSL_unavailable_option
     end subroutine mi35_solve
 
 !****************************************************************************
@@ -206,7 +206,7 @@
     subroutine mi35_finalise( keep, info )
     type(mi35_keep), intent(inout) :: keep
     type(mi35_info), intent(inout) :: info
-    info%flag = GALAHAD_unavailable_option
+    info%flag = HSL_unavailable_option
     end subroutine mi35_finalise
 
   end module hsl_mi35_real

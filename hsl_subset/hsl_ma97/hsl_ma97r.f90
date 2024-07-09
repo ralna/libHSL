@@ -7,7 +7,7 @@
 module hsl_ma97_real
 
    use hsl_kinds_real, only: ip_, long_, lp_, rp_
-   USE HSL_SYMBOLS, ONLY: GALAHAD_unavailable_option
+   USE HSL_SYMBOLS, ONLY: HSL_unavailable_option
 
    implicit none
    public :: ma97_get_n__, ma97_get_nz__
@@ -153,7 +153,7 @@ contains
   &         ' dummy subroutine MA97_analyse with its HSL namesake ', /,        &
   &         ' and dependencies. See ', /,                                      &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
 
   end subroutine MA97_analyse_real
 
@@ -177,7 +177,7 @@ contains
   &         ' dummy subroutine MA97_analyse with its HSL namesake ', /,        &
   &         ' and dependencies. See ', /,                                      &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
 
   end subroutine analyse_real
 
@@ -199,7 +199,7 @@ contains
   &         ' dummy subroutine MA97_analyse_coord with its HSL namesake ', /,  &
   &         ' and dependencies. See ', /,                                      &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
 
   end subroutine MA97_analyse_coord_real
 
@@ -224,7 +224,7 @@ contains
   &         ' dummy subroutine MA97_factorize with its HSL namesake ', /,      &
   &         ' and dependencies. See ', /,                                      &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
 
   end subroutine MA97_factor_real
 
@@ -251,7 +251,7 @@ contains
   &         ' dummy subroutine MA97_factor_solve with its HSL namesake ', /,   &
   &         ' and dependencies. See ', /,                                      &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
 
   end subroutine MA97_factor_solve_real
 
@@ -277,7 +277,7 @@ contains
   &         ' dummy subroutine MA97_factor_solve_one with its HSL namesake', /,&
   &         ' and dependencies. See ', /,                                      &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
 
   end subroutine MA97_factor_solve_one_real
 
@@ -300,7 +300,7 @@ contains
   &         ' dummy subroutine MA97_solve with its HSL namesake ', /,          &
   &         ' and dependencies. See ', /,                                      &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
 
   end subroutine MA97_solve_real
 
@@ -333,7 +333,7 @@ contains
   &         ' dummy subroutine MA97_solve_one with its HSL namesake ', /,      &
   &         ' and dependencies. See ', /,                                      &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
 
   end subroutine MA97_solve_one_real
 
@@ -357,7 +357,7 @@ contains
   &         ' dummy subroutine MA97_solve_fredhom with its HSL namesake',      &
   &          /, ' and dependencies. See ', /,                                  &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
   end subroutine MA97_solve_fredholm_real
 
   subroutine ma97_lmultiply_one_real(trans, x1, y1, akeep, fkeep,            &
@@ -379,7 +379,7 @@ contains
   &         ' dummy subroutine MA97_lmultiply_mult with its HSL namesake',     &
   &          /, ' and dependencies. See ', /,                                  &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
   end subroutine ma97_lmultiply_one_real
 
   subroutine ma97_lmultiply_mult_real(trans, k, x, ldx, y, ldy,              &
@@ -404,7 +404,7 @@ contains
   &         ' dummy subroutine MA97_lmultiply_one with its HSL namesake',      &
   &          /, ' and dependencies. See ', /,                                  &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
   end subroutine ma97_lmultiply_mult_real
 
   subroutine MA97_enquire_posdef_real(akeep,fkeep,control,info,d)
@@ -423,7 +423,7 @@ contains
   &         ' dummy subroutine MA97_enquire_posdef with its HSL namesake', /,  &
   &         ' and dependencies. See ', /,                                      &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
 
   end subroutine MA97_enquire_posdef_real
 
@@ -444,7 +444,7 @@ contains
   &         ' dummy subroutine MA97_enquire_indef with its HSL namesake ', /,  &
   &         ' and dependencies. See ', /,                                      &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
 
   end subroutine MA97_enquire_indef_real
 
@@ -464,7 +464,7 @@ contains
   &         ' dummy subroutine MA97_alter with its HSL namesake ', /,          &
   &         ' and dependencies. See ', /,                                      &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
 
   end subroutine MA97_alter_real
 
@@ -496,7 +496,7 @@ contains
   &         ' dummy subroutine MA97_sparse_fwd_solve with its HSL namesake ',/,&
   &         ' and dependencies. See ', /,                                      &
   &         '   $GALAHAD/src/makedefs/packages for details.' )" )
-   info%flag = GALAHAD_unavailable_option
+   info%flag = HSL_unavailable_option
 
   end subroutine ma97_sparse_fwd_solve_real
 

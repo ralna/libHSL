@@ -36,7 +36,7 @@
       IMPLICIT NONE
 
       INTEGER ( KIND = ip_ ), PUBLIC, PARAMETER ::                             &
-                              GALAHAD_unavailable_option = - 29
+                              HSL_unavailable_option = - 29
 
    END MODULE HSL_SYMBOLS
 
