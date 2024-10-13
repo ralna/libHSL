@@ -1,4 +1,4 @@
-! THIS VERSION: GALAHAD 5.0 - 2024-03-17 AT 11:25 GMT.
+! THIS VERSION: GALAHAD 5.1 - 2024-10-11 AT 15:00 GMT.
 
 #include "hsl_subset.h"
 
@@ -9,10 +9,11 @@
    USE HSL_SYMBOLS, ONLY: HSL_unavailable_option
 
    implicit none
-   private
 
+   private
    public :: mi28_keep, mi28_control, mi28_info
    public :: mi28_factorize, mi28_finalise, mi28_precondition, mi28_solve
+   LOGICAL, PUBLIC, PARAMETER :: mi28_available = .FALSE.
 
   real(rp_), parameter :: zero = 0.0_rp_
   real(rp_), parameter :: one = 1.0_rp_
