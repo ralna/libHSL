@@ -1,4 +1,4 @@
-! THIS VERSION: GALAHAD 5.0 - 2024-03-17 AT 11:25 GMT.
+! THIS VERSION: GALAHAD 5.1 - 2024-10-11 AT 14:30 GMT.
 
 #include "hsl_subset.h"
 
@@ -10,7 +10,13 @@ module hsl_ma97_real
    USE HSL_SYMBOLS, ONLY: HSL_unavailable_option
 
    implicit none
+   public :: ma97_akeep, ma97_fkeep, ma97_control, ma97_info
+   public :: ma97_analyse, ma97_analyse_coord, ma97_factor, ma97_factor_solve, &
+             ma97_solve, ma97_solve_fredholm, ma97_free, ma97_finalise, &
+             ma97_enquire_posdef, ma97_enquire_indef, ma97_alter, &
+             ma97_lmultiply, ma97_sparse_fwd_solve
    public :: ma97_get_n__, ma97_get_nz__
+   LOGICAL, PUBLIC, PARAMETER :: ma97_available = .FALSE.
    private :: ip_, long_, lp_, rp_
 
 ! Parameters (all private)
