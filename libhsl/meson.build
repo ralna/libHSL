@@ -1,7 +1,7 @@
 project(
   'libHSL',
   'c',
-  version: '3.0.0',
+  version: '4.0.0',
   default_options: [
     'buildtype=release',
     'libdir=lib',
