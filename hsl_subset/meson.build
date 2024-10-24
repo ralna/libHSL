@@ -2,7 +2,7 @@ project(
   'hsl_subset',
   'c',
   'fortran',
-  version: '4.0.0',
+  version: '4.0.1',
   default_options: [
     'buildtype=release',
     'libdir=lib',
