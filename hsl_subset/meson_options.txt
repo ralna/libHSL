@@ -1,0 +1,4 @@
+option('quadruple',
+       type : 'boolean',
+       value : false,
+       description : 'Compile HSL packages with quadruple precision')
