@@ -57,7 +57,7 @@ jobs:
         shell: bash
         run: |
           QUADRUPLE="true"
-          if [[ "${{ inputs.compiler }}" == "nvidia-hpc" || "${{ inputs.compiler }}" == "intel-classic" || "${{ inputs.compiler }}" == "intel" ]]; then
+          if [[ "${{ matrix.compiler }}" == "nvidia-hpc" || "${{ matrix.compiler }}" == "intel-classic" || "${{ matrix.compiler }}" == "intel" ]]; then
             QUADRUPLE="false"
           fi
           cd $GITHUB_WORKSPACE/libhsl
