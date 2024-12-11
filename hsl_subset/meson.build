@@ -2,7 +2,7 @@ project(
   'hsl_subset',
   'c',
   'fortran',
-  version: '4.0.1',
+  version: '4.0.2',
   default_options: [
     'buildtype=release',
     'libdir=lib',
@@ -35,6 +35,9 @@ elif fc.get_id() == 'nvidia_hpc'
   pp_options += ['-Mcpp', '-F']
 endif
 
+# Options
+build_quadruple = get_option('quadruple')
+
 # hsl_subset
 libhsl_subset_src = []
 libhsl_subset_multi_src = []
@@ -43,7 +46,8 @@ libhsl_subset_f_multi_src = []
 hsl_subset_headers = []
 hsl_subset_include = include_directories('include')
 
-libhsl_subset_src += files('hsl_ad02/hsl_ad02r.f90',
+libhsl_subset_src += files('hsl_kinds/hsl_kinds_real.f90',
+                           'hsl_ad02/hsl_ad02r.f90',
                            'hsl_ma48/hsl_ma48r.f90',
                            'hsl_ma54/hsl_ma54r.f90',
                            'hsl_ma57/hsl_ma57r.f90',
@@ -153,6 +157,18 @@ gen_f_double = generator(fc_compiler,
                                      ['-I', '@CURRENT_SOURCE_DIR@/include', '@INPUT@'] +
                                      output_generator)
 
+gen_quadruple = generator(fc_compiler,
+                          output : 'quadruple_int32_@BASENAME@.f90',
+                          arguments : pp_options + '-DREAL_128' +
+                                      ['-I', '@CURRENT_SOURCE_DIR@/include', '@INPUT@'] +
+                                      output_generator)
+
+gen_f_quadruple = generator(fc_compiler,
+                            output : 'quadruple_int32_@BASENAME@.f',
+                            arguments : pp_options + '-DREAL_128' +
+                                        ['-I', '@CURRENT_SOURCE_DIR@/include', '@INPUT@'] +
+                                        output_generator)
+
 gen_single_64 = generator(fc_compiler,
                           output : 'single_int64_@BASENAME@.f90',
                           arguments : pp_options + '-DREAL_32' + '-DINTEGER_64' +
@@ -177,12 +193,34 @@ gen_f_double_64 = generator(fc_compiler,
                                        ['-I', '@CURRENT_SOURCE_DIR@/include', '@INPUT@'] +
                                        output_generator)
 
+gen_quadruple_64 = generator(fc_compiler,
+                             output : 'quadruple_int64_@BASENAME@.f90',
+                             arguments : pp_options + '-DREAL_128' + '-DINTEGER_64' +
+                                         ['-I', '@CURRENT_SOURCE_DIR@/include', '@INPUT@'] +
+                                         output_generator)
+
+gen_f_quadruple_64 = generator(fc_compiler,
+                               output : 'quadruple_int64_@BASENAME@.f',
+                               arguments : pp_options + '-DREAL_128' + '-DINTEGER_64' +
+                                           ['-I', '@CURRENT_SOURCE_DIR@/include', '@INPUT@'] +
+                                           output_generator)
+
 # Library libhsl_subset
 pp_sources_f_single = gen_f_single.process(libhsl_subset_f_src)
-pp_sources_f_double = gen_f_double.process([libhsl_subset_f_src, libhsl_subset_f_multi_src])
 pp_sources_single = gen_single.process(libhsl_subset_src)
-pp_sources_double = gen_double.process([libhsl_subset_src, libhsl_subset_multi_src])
-pp_libhsl_subset_src = [pp_sources_f_single, pp_sources_f_double, pp_sources_single, pp_sources_double]
+
+if build_quadruple
+  pp_sources_f_double = gen_f_double.process(libhsl_subset_f_src)
+  pp_sources_double = gen_double.process(libhsl_subset_src)
+  pp_sources_f_quadruple = gen_f_quadruple.process([libhsl_subset_f_src, libhsl_subset_f_multi_src])
+  pp_sources_quadruple = gen_quadruple.process([libhsl_subset_src, libhsl_subset_multi_src])
+  pp_libhsl_subset_src = [pp_sources_f_single, pp_sources_f_double, pp_sources_f_quadruple,
+                          pp_sources_single, pp_sources_double, pp_sources_quadruple]
+else
+  pp_sources_f_double = gen_f_double.process([libhsl_subset_f_src, libhsl_subset_f_multi_src])
+  pp_sources_double = gen_double.process([libhsl_subset_src, libhsl_subset_multi_src])
+  pp_libhsl_subset_src = [pp_sources_f_single, pp_sources_f_double, pp_sources_single, pp_sources_double]
+endif
 
 libhsl_subset = library('hsl_subset',
                         sources : pp_libhsl_subset_src,
@@ -192,10 +230,20 @@ libhsl_subset = library('hsl_subset',
 
 # Library libhsl_subset_64
 pp_sources_f_single_64 = gen_f_single_64.process(libhsl_subset_f_src)
-pp_sources_f_double_64 = gen_f_double_64.process([libhsl_subset_f_src, libhsl_subset_f_multi_src])
 pp_sources_single_64 = gen_single_64.process(libhsl_subset_src)
-pp_sources_double_64 = gen_double_64.process([libhsl_subset_src, libhsl_subset_multi_src])
-pp_libhsl_subset_64_src = [pp_sources_f_single_64, pp_sources_f_double_64, pp_sources_single_64, pp_sources_double_64]
+
+if build_quadruple
+  pp_sources_f_double_64 = gen_f_double_64.process(libhsl_subset_f_src)
+  pp_sources_double_64 = gen_double_64.process(libhsl_subset_src)
+  pp_sources_f_quadruple_64 = gen_f_quadruple_64.process([libhsl_subset_f_src, libhsl_subset_f_multi_src])
+  pp_sources_quadruple_64 = gen_quadruple_64.process([libhsl_subset_src, libhsl_subset_multi_src])
+  pp_libhsl_subset_64_src = [pp_sources_f_single_64, pp_sources_f_double_64, pp_sources_f_quadruple_64,
+                             pp_sources_single_64, pp_sources_double_64, pp_sources_quadruple_64]
+else
+  pp_sources_f_double_64 = gen_f_double_64.process([libhsl_subset_f_src, libhsl_subset_f_multi_src])
+  pp_sources_double_64 = gen_double_64.process([libhsl_subset_src, libhsl_subset_multi_src])
+  pp_libhsl_subset_64_src = [pp_sources_f_single_64, pp_sources_f_double_64, pp_sources_single_64, pp_sources_double_64]
+endif
 
 libhsl_subset = library('hsl_subset_64',
                         sources : pp_libhsl_subset_64_src,

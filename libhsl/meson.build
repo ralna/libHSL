@@ -2,7 +2,7 @@ project(
   'libHSL',
   'c',
   'fortran',
-  version: '4.0.1',
+  version: '4.0.2',
   default_options: [
     'buildtype=release',
     'libdir=lib',
