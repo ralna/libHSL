@@ -14,7 +14,7 @@
 
      implicit none
      private :: ip_, lp_, rp_
-     LOGICAL, PUBLIC, PARAMETER :: mi20_available = .FALSE.
+     LOGICAL, PUBLIC :: mi20_available = .FALSE.
 
      type mi20_control
        integer(ip_) :: aggressive = 1
