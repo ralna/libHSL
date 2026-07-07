@@ -2,7 +2,7 @@ project(
   'libHSL',
   'c',
   'fortran',
-  version: '4.0.4',
+  version: '4.0.5',
   default_options: [
     'buildtype=release',
     'libdir=lib',
@@ -15,5 +15,5 @@ install_headers('libhsl.h')
 
 # Library libhsl
 libhsl = library('hsl',
-                 sources : ['libhsl.c', 'ma27.f', 'ma57.f'],
+                 sources : ['libhsl.c', 'ma27.f', 'ma57.f', 'hsl_ma86.c'],
                  install : true)
